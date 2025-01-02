@@ -194,21 +194,26 @@ function typeGreeting() {
   } else {
       // Tunggu beberapa detik sebelum mengganti sapaan
       setTimeout(() => {
-          eraseGreeting(); // Hapus sapaan saat ini
+          eraseGreeting(); // Hapus sapaan
       }, pauseTime);
   }
 }
 
-// Fungsi untuk menghapus sapaan satu per satu
+// Fungsi untuk menghapus sapaan dengan meninggalkan satu huruf terakhir yang tidak dihapus
 function eraseGreeting() {
-  if (charIndex > 0) {
+  const currentGreeting = greetings[currentIndex];
+
+  // Hapus karakter satu per satu, tetapi tetap tinggalkan huruf terakhir
+  if (charIndex > 1) {
       dynamicTextElement.textContent = dynamicTextElement.textContent.slice(0, -1); // Hapus karakter terakhir
       charIndex--; // Kurangi indeks karakter
       setTimeout(eraseGreeting, typingSpeed); // Jadwalkan penghapusan karakter berikutnya
   } else {
-      // Ganti ke sapaan berikutnya
+      // Ganti ke sapaan berikutnya, langsung tampilkan huruf pertama
       currentIndex = (currentIndex + 1) % greetings.length; // Beralih ke sapaan berikutnya secara melingkar
-      typeGreeting(); // Mulai mengetik sapaan baru
+      dynamicTextElement.textContent = greetings[currentIndex][0]; // Tampilkan huruf pertama sapaan baru
+      charIndex = 1; // Mulai dari huruf kedua
+      setTimeout(typeGreeting, typingSpeed); // Mulai mengetik sapaan baru
   }
 }
 

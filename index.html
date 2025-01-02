@@ -10,6 +10,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="src/css/output.css" rel="stylesheet" />
     <link href="src/css/style.css" rel="stylesheet" />
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+    </style>
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
                 '(prefers-color-scheme: dark)').matches)) {
@@ -272,7 +277,7 @@
     <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
-                <div class="mx-auto mb-16 max-w-xl text-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="mx-auto mb-16 max-w-xl text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                     <h2 class="mb-4 text-3xl font-bold text-primary dark:text-white sm:text-4xl lg:text-5xl"
                         data-translate="portfolio">Portfolio</h2>
                     <p class="text-md font-medium text-secondary md:text-lg" data-translate="desk">
@@ -280,16 +285,19 @@
                     </p>
                 </div>
             </div>
-
+    
             <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12 md:flex-row md:gap-6 lg:gap-8">
                 <div class="mb-12 p-4 w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="200">
-                    <!-- Tourist Reservation Section -->
+                    data-aos-delay="200" data-aos-once="true">
                     <h3 class="mb-4 text-xl font-semibold text-dark dark:text-white" data-translate="text">Tourist
                         Reservation</h3>
                     <div class="overflow-hidden rounded-md shadow-md">
                         <div class="swiper">
                             <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="src/img/lks0.jpg" alt="Tourist Reservation 1"
+                                        class="w-full h-64 object-cover" />
+                                </div>
                                 <div class="swiper-slide">
                                     <img src="src/img/lks.jpg" alt="Tourist Reservation 1"
                                         class="w-full h-64 object-cover" />
@@ -318,10 +326,9 @@
                         Bootstrap, and PHP.
                     </p>
                 </div>
-
+    
                 <div class="mb-12 p-4 w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="400">
-                    <!-- IFSULIB Section -->
+                    data-aos-delay="400" data-aos-once="true">
                     <h3 class="mb-4 text-xl font-semibold text-dark dark:text-white">IFSULIB</h3>
                     <div class="overflow-hidden rounded-md shadow-md">
                         <div class="swiper">
@@ -356,10 +363,9 @@
                         Final project for the fourth semester, a library website built using HTML, Bootstrap, and PHP.
                     </p>
                 </div>
-
+    
                 <div class="mb-12 p-4 w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="600">
-                    <!-- E-Vote Section -->
+                    data-aos-delay="600" data-aos-once="true">
                     <h3 class="mb-4 text-xl font-semibold text-dark dark:text-white">E-Vote</h3>
                     <div class="overflow-hidden rounded-md shadow-md">
                         <div class="swiper">
@@ -387,10 +393,9 @@
                         team.
                     </p>
                 </div>
-
+    
                 <div class="mb-12 p-4 w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="800">
-                    <!-- Internship Project Section -->
+                    data-aos-delay="800" data-aos-once="true">
                     <h3 class="mb-4 text-xl font-semibold text-dark dark:text-white" data-translate="text4">Internship
                         Project</h3>
                     <div class="overflow-hidden rounded-md shadow-md">
@@ -428,7 +433,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
     <!-- Portfolio Section End -->
     <!-- Footer Start -->
     <footer class="bg-dark pt-10 pb-12">
